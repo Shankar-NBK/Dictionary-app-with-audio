@@ -20,6 +20,9 @@ searchBtn.addEventListener("click", () => {
         <p id="phonetic" class="marginbottom"><i>${data[0].phonetic}</i></p><br />
         <p id="pr1" class="marginbottom rightborder">${data[0].meanings[0].definitions[0].definition}</p>
         </div>`;
+
+        
+
         //sound.setAttribute("src", `${data[0].phonetics[1].audio}`);
         //console.log(sound);
         function play() {
@@ -29,7 +32,12 @@ searchBtn.addEventListener("click", () => {
           }
 
           play();
+    })
+    .catch(() => {
+        result.innerHTML=`<h2>Couldn't Find the Word</h2>`;
     });
+
+
 });
 
 
